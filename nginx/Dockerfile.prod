@@ -1,0 +1,12 @@
+
+FROM nginx:1.15.0-alpine
+
+RUN rm /etc/nginx/conf.d/default.conf
+COPY nginx.conf /etc/nginx/conf.d
+
+# CRIA UM ARQUIVO index.php no diretorio /laravel/public - precisa existir mesmo que seja em branco, para haver resposta e não erro 404 #
+RUN mkdir /var/www/html -p  && touch /var/www/html/index.php
+
+ENTRYPOINT [ "nginx","-g", "daemon off;"]
+
+CMD ["nginx", "-g", "daemon off;"]
