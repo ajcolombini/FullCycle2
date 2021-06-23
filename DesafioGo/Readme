@@ -1,2 +1,3 @@
 IMAGEM GO
 https://hub.docker.com/repository/docker/ajcolombini/go
+docker pull ajcolombini/go:prod
